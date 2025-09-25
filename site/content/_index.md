@@ -1,7 +1,7 @@
 ---
 title: "Sinusoidal Misery"
-subtitle: meep
+subtitle: "meep"
 blurb:
-    heading: Why Misery?
-    text: Why not?
-
+  heading: "Why Misery?"
+  text: "Why not?"
+---
