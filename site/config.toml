@@ -1,0 +1,8 @@
+baseURL = "/"
+languageCode = "en-us"
+languageLang = "en"
+title = "Sinusoidal Misery"
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[params]
+images = []
