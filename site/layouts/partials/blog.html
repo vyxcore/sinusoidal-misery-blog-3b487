@@ -1,19 +1,18 @@
-<div class="bg-off-white pv4">
-	<div class="ph3 mw7 center">
-
-		<h2 class="f2 b lh-title mb3">Latest stories</h2>
-
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range first 4 (where .Data.Pages "Type" "post") }}
-				<div class="ph1-ns w-50-ns flex">
-					{{ .Render "li" }}
-				</div>
-			{{ end }}
-		</div>
-
-		<div class="tc">
-			<a href="/post" class="btn raise">Read more</a>
-		</div>
-
-	</div>
-</div>
+<!doctype html>
+<html lang="en">
+  {{ partial "head" . }}
+  <body>
+    {{ partial "header" . }}
+    <main class="mw7 center ph3">
+      <ul>
+        {{ range (where .Site.RegularPages "Section" "posts") }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            — {{ .Date.Format "2006-01-02" }}
+          </li>
+        {{ end }}
+      </ul>
+    </main>
+    {{ partial "footer" . }}
+  </body>
+</html>
