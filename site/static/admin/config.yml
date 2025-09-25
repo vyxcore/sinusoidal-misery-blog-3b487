@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/img/uploads"   # where uploaded files go in repo
-public_folder: "/img/uploads"        # how they’re served on site
+media_folder: "static/img/uploads"   # where uploaded images go in the repo
+public_folder: "/img/uploads"        # how they're served on the site
 
 collections:
   - name: "posts"
@@ -11,10 +11,21 @@ collections:
     folder: "content/posts"
     create: true
     slug: "{{slug}}"
-    path: "{{slug}}/index"           # so each post is a page bundle
+    path: "{{slug}}/index"           # makes each post a page bundle
     extension: "md"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "hugo.toml"
+        label: "Hugo Config"
+        name: "config"
+        editor:
+          preview: false
+        fields:
+          - {label: "Site Title", name: title, widget: "string"}
